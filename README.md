@@ -5,13 +5,21 @@ composer create-project laravel/laravel myfirstapp 4.2 --prefer-dist
 
 cd myfirstapp
 
-/opt/lampp/bin/php artisan serve
+/opt/lampp/bin/php artisan ...
 
-/opt/lampp/bin/php artisan migrate:make create_books
+artisan serve
 
-/opt/lampp/bin/php artisan migrate:install
+artisan migrate:make create_books
 
-/opt/lampp/bin/php artisan migrate
+artisan migrate:install
 
-/opt/lampp/bin/php artisan migrate:rollback
+artisan migrate
+
+artisan migrate:rollback
+
+artisan help migrate:make
+
+artisan migrate:make create_users_table --create=users
+
+artisan migrate:make create_books_table --create=books
 ```
