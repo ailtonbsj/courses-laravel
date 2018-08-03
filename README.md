@@ -22,4 +22,6 @@ artisan help migrate:make
 artisan migrate:make create_users_table --create=users
 
 artisan migrate:make create_books_table --create=books
+
+artisan db:seed
 ```
