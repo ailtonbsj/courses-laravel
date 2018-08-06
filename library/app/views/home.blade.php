@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<meta charset=utf-8>
-	<meta name=description content="">
-	<meta name=viewport content="width=device-width, initial-scale=1">
-</head>
-<body>
+@extends ('layout.main')
+
+@section ('books')
+	<div class="container">
+		<ul class="list-group">
 	@foreach ($books as $book)
-		<li>{{ $book->title }} written by {{ $book->writer }}</li>
+		<li class="list-group-item">{{ $book->title }} written by {{ $book->writer }}</li>
 	@endforeach
-</body>
-</html>
+		</ul>
+	</div>
+@stop
