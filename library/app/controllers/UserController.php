@@ -58,7 +58,20 @@ class UserController extends BaseController {
 	}
 
 	public function postRegister(){
-		
+		$validator = User::validate(Input::all());
+		if($validator->passes()){
+			User::create(array(
+				'username'=>Input::get('username'),
+				'email'=>Input::get('email'),
+				'password'=>Input::get('password')
+			));
+
+			return Redirect::route('login')
+			->withMessage('Yout have successfully registered!');
+		}
+
+		return Redirect::route('register')
+		->withErrors($validator);
 	}
 
 	public function logout(){
