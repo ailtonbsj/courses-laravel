@@ -1,5 +1,0 @@
-#!/bin/bash
-
-systemctl stop apache2.service
-sudo /opt/lampp/lampp startmysql
-/opt/lampp/bin/php artisan serve
