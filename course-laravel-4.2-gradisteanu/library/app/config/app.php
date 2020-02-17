@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL ^ E_DEPRECATED); // Ailton added this because is an old course
+
 return array(
 
 	/*
@@ -13,7 +15,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
