@@ -22,17 +22,17 @@ Route::get('/', function()
 	// $book->save();
 
 	// Select item
-	$book = Book::find(1);
+	//$book = Book::find(1);
 
 	// Update Item
 	// $book->in_store = 1;
 	// $book->save();
 
 	// Delete Item
-	$book->delete();
+	//$book->delete();
 
-
-	return View::make('hello');
+	$cities = array('Los Angeles', 'San Francisco', 'NYC', 'Miami');
+	return View::make('hello', array('location' => 'California', 'cities' => $cities));
 });
 
 Route::get('category', function()
