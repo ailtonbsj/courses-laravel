@@ -13,22 +13,23 @@
 
 Route::get('/', function()
 {
-	// Create the table books
-	Schema::create('books', function($newTable){
-		$newTable->increments('id');
-		$newTable->string('writer');
-		$newTable->string('title', 500);
-		$newTable->text('description');
-		$newTable->date('published');
-		$newTable->integer('copied');
-		$newTable->timestamps();
-	});
+	// Insert Item
+	// $book = new Book;
+	// $book->writer = 'Mark Twain';
+	// $book->title = 'The Adventures of Tom Sawyer';
+	// $book->description = 'A novel about a young boy growing up along the Mississipi River';
+	// $book->published = date('Y-m-d');
+	// $book->save();
 
-	// Update the table books
-	Schema::table('books', function($newTable){
-		$newTable->boolean('in_store');
-		$newTable->dropColumn('copied');
-	});
+	// Select item
+	$book = Book::find(1);
+
+	// Update Item
+	// $book->in_store = 1;
+	// $book->save();
+
+	// Delete Item
+	$book->delete();
 
 
 	return View::make('hello');

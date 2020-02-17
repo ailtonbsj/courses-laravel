@@ -16,12 +16,26 @@ cd ./myfirstapp
 php artisan serve
 
 # edit ./app/config/app.php to enable debug and disable error reporting
+
+php artisan migrate:make create_books
+
+php artisan migrate:install
+
+php artisan migrate
 ```
 
-## Commands to use
+## Commands after clone repository
 
 ```bash
 cd ./myfirstapp
 
 composer install
+```
+
+## Commands to remove tables with migrations
+
+```bash
+cd ./myfirstapp
+
+php artisan migrate:rollback
 ```
