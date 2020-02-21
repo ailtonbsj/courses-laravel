@@ -24,6 +24,8 @@ php artisan migrate:make create_books_table --create=books
 php artisan migrate:install
 
 php artisan migrate
+
+php artisan db:seed
 ```
 
 ## Commands after clone repository
