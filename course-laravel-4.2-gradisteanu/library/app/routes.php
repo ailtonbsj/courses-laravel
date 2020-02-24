@@ -10,11 +10,14 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::group(array('before'=>'auth'), function () {
 
-Route::get('/', array(
-	'as'=>'home',
-	'uses'=>'UserController@home'
-));
+	Route::get('/', array(
+		'as'=>'home',
+		'uses'=>'UserController@home'
+	));
+
+});
 
 Route::get('/login', array(
 	'as'=>'login',
@@ -34,4 +37,9 @@ Route::get('/register', array(
 Route::post('/register', array(
 	'as'=>'register-post',
 	'uses'=>'UserController@postRegister'
+));
+
+Route::get('/logout', array(
+	'as'=>'logout',
+	'uses'=>'UserController@logout'
 ));
