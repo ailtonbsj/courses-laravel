@@ -78,6 +78,17 @@
                     Laravel
                 </div>
 
+                <form action="/contato" method="post">
+                    {{ csrf_field() }}
+                    <button>Enviar via POST</button>
+                </form>
+
+                <form action="/contato" method="post">
+                    <input type="hidden" name="_method" value="put">
+                    {{ csrf_field() }}
+                    <button>Enviar via PUT</button>
+                </form>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

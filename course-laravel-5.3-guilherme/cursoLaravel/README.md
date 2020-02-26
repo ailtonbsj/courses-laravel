@@ -11,4 +11,6 @@
 composer create-project --prefer-dist laravel/laravel cursoLaravel 5.3
 
 php artisan serve
+
+php artisan make:controller ContatoController
 ```
