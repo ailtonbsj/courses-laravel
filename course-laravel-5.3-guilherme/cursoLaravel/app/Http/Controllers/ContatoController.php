@@ -10,7 +10,8 @@ class ContatoController extends Controller
         return "Index do ContatoController de id = $id";
     }
 
-    public function criar() {
+    public function criar(Request $req) {
+        dd($req->all());
         return "Criar do ContatoController";
     }
 

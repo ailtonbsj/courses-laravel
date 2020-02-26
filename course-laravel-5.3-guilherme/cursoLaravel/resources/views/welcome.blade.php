@@ -80,12 +80,14 @@
 
                 <form action="/contato" method="post">
                     {{ csrf_field() }}
+                    <input type="text" name="name" id="name">
                     <button>Enviar via POST</button>
                 </form>
 
                 <form action="/contato" method="post">
                     <input type="hidden" name="_method" value="put">
                     {{ csrf_field() }}
+                    <input type="text" name="name" id="name">
                     <button>Enviar via PUT</button>
                 </form>
 
