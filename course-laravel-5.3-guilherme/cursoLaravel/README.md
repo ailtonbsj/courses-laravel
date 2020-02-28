@@ -22,4 +22,28 @@ php artisan make:migration create_produtos_table --create=produtos
 sudo apt install php-sqlite3
 
 php artisan migrate
+
+php artisan tinker
+>>>
+```
+
+### On Tinker prompt
+
+```
+# Create
+$contato = new App\Contato();
+$contato->nome="Guilerme";
+$contato->tel="5454545454";
+$contato->email="gui@mail.com";
+$contato;
+$contato->save();
+
+# List All
+App\Contato::all();
+
+# Get
+$con = App\Contato::find(1);
+
+# Remove
+$con->delte();
 ```
