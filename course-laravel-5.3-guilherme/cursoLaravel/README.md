@@ -47,3 +47,13 @@ $con = App\Contato::find(1);
 # Remove
 $con->delte();
 ```
+
+## Commands to Create
+
+```bash
+php artisan make:model Curso -m
+
+php artisan migrate
+
+php artisan make:controller Admin/CursoController
+```
