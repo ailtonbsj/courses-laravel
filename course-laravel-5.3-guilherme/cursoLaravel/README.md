@@ -56,4 +56,6 @@ php artisan make:model Curso -m
 php artisan migrate
 
 php artisan make:controller Admin/CursoController
+
+php artisan make:controller Site/HomeController
 ```
