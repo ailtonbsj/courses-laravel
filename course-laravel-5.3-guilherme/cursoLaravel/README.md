@@ -58,4 +58,14 @@ php artisan migrate
 php artisan make:controller Admin/CursoController
 
 php artisan make:controller Site/HomeController
+
+php artisan make:seed UsuarioSeeder
+
+# To run all seeds
+php artisan db:seed
+
+# To run one seed
+php artisan db:seed --class=UsuarioSeeder
+
+php artisan make:controller Site/LoginController
 ```
