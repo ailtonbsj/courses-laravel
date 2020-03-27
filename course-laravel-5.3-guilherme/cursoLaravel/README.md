@@ -1,4 +1,4 @@
-# Course of Laravel 5 by Guilherme
+# Course of Laravel 5
 
 ## Requirements
 
