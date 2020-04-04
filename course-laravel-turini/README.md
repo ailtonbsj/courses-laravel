@@ -37,3 +37,20 @@ php artisan make:controller ProdutoController
 create database estoque_laravel;
 -- mysql -u admin -p estoque_laravel < dump.sql
 ```
+
+## Creating project
+```bash
+# Create a Model
+php artisan make:model Produto -m
+
+# Drop table produtos before continue
+
+# Generate tables
+php artisan migrate
+
+# Create seed
+php artisan make:seeder ProdutoTableSeeder
+
+# Insert data on table from seed
+php artisan db:seed
+```
