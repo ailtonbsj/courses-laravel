@@ -17,7 +17,7 @@ class ProdutoController extends Controller
 
     public function mostra(Request $request)
     {
-        $id = $request->input('id', '0');
+        $id = $request->route('id');
         $resposta = DB::select('select * from produtos where id = ?', [$id]);
         if (empty($resposta)) return "Este produto não existe!";
         return view('detalhes')->with('p', $resposta[0]);
