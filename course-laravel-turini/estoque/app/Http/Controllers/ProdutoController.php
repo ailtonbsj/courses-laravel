@@ -9,6 +9,8 @@ class ProdutoController extends Controller
 {
     public function lista() {
         $produtos = DB::select('select * from produtos');
-        return '<pre>' . var_export($produtos, true) . '</pre>';
+        // return view('listagem')->winProdutos($produtos);
+        // return view('listagem', ['produtos' => $produtos]);
+        return view('listagem')->with('produtos', $produtos);
     }
 }
