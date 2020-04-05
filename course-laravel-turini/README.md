@@ -21,7 +21,7 @@ fi
 # Create new project
 laravel new estoque
 
-# install appNama command
+# install appName command
 composer require andrey-helldar/laravel-app --dev
 
 # Change namespace of project
@@ -53,4 +53,14 @@ php artisan make:seeder ProdutoTableSeeder
 
 # Insert data on table from seed
 php artisan db:seed
+
+# ui utilities and presets
+composer require laravel/ui
+
+# bootstrap scaffolding
+php artisan ui bootstrap
+
+# install npm packages
+npm install
+npm run dev
 ```
