@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
 </head>
 
 <body>
@@ -22,7 +23,11 @@
                     <td><?= $p->valor ?></td>
                     <td><?= $p->descricao ?></td>
                     <td><?= $p->quantidade ?></td>
-                    <td><a href="/produtos/mostra">Visualizar</a></td>
+                    <td>
+                        <a href="/produtos/mostra">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </a>
+                    </td>
                 </tr>
             <?php
             }
