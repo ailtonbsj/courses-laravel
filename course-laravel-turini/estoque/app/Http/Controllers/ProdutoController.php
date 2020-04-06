@@ -12,14 +12,13 @@ class ProdutoController extends Controller
         $produtos = DB::select('select * from produtos');
         // return view('listagem')->winProdutos($produtos);
         // return view('listagem', ['produtos' => $produtos]);
-        return view('listagem')->with('produtos', $produtos);
+        return view('produto.listagem')->with('produtos', $produtos);
     }
 
-    public function mostra(Request $request)
+    public function mostra($id)
     {
-        $id = $request->route('id');
         $resposta = DB::select('select * from produtos where id = ?', [$id]);
         if (empty($resposta)) return "Este produto não existe!";
-        return view('detalhes')->with('p', $resposta[0]);
+        return view('produto.detalhes')->with('p', $resposta[0]);
     }
 }
