@@ -63,4 +63,9 @@ php artisan ui bootstrap
 # install npm packages
 npm install
 npm run dev
+
+#install bootstrap icons
+npm i bootstrap-icons --save
+mkdir public/icons
+cp node_modules/bootstrap-icons/icons/search.svg public/icons/
 ```

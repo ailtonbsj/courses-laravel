@@ -7,6 +7,9 @@
 @if (empty($produtos))
 <div class="alert alert-info">Você não tem nenhum produto cadastrado!</div>
 @else
+    @if (session('status'))
+        <div class="alert alert-info">{{ session('status') }}!</div>
+    @endif
 <table class="table table-striped table-hover">
     @foreach ($produtos as $p)
     <tr class="{{ $p->quantidade <= 1 ? 'bg-danger' : '' }}">
@@ -17,6 +20,7 @@
         <td>{{ $p->quantidade }}</td>
         <td>
             <a href="/produtos/mostra/{{ $p->id }}">
+                <img src="../icons/search.svg" title="Bootstrap">
                 <span class="glyphicon glyphicon-search"></span>
             </a>
         </td>

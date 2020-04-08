@@ -21,4 +21,25 @@ class ProdutoController extends Controller
         if (empty($resposta)) return "Este produto não existe!";
         return view('produto.detalhes')->with('p', $resposta[0]);
     }
+
+    public function novo()
+    {
+        return view('produto.formulario');
+    }
+
+    public function adiciona(Request $req)
+    {
+        $fields = $req->only('nome', 'descricao', 'valor', 'quantidade');
+        // DB::insert('insert into produtos (nome, descricao, valor, quantidade)
+        //             values (?, ?, ?, ?)', array_values($fields));
+        DB::table('produtos')->insert(
+            [
+                'nome' => $fields['nome'],
+                'valor' => $fields['valor'],
+                'descricao' => $fields['descricao'],
+                'quantidade' => $fields['quantidade']
+            ]
+        );
+        return redirect('produtos')->with('status', 'Sucesso');
+    }
 }

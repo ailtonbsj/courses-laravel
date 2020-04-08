@@ -7,10 +7,9 @@
     <title>Controle de Estoque</title>
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
     <style>
         .container {
-            margin-top: 50px;
+            margin-top: 70px;
         }
     </style>
 </head>
@@ -27,10 +26,13 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/produtos/">Produtos</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="/produtos/">Produtos</a>
+                            <a class="nav-link" href="/produtos/">Listagem</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/produtos/novo">Novo</a>
                         </li>
                     </ul>
                 </div>
