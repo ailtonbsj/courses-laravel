@@ -43,4 +43,10 @@ class ProdutoController extends Controller
         //return redirect('produtos')->with('status', 'Sucesso');
         return redirect('produtos')->withInput($req->only('nome'));
     }
+
+    public function listaJson()
+    {
+        $produtos = DB::select('select * from produtos');
+        return $produtos;
+    }
 }
