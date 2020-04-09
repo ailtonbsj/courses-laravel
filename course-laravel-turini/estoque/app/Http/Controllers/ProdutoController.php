@@ -40,6 +40,7 @@ class ProdutoController extends Controller
                 'quantidade' => $fields['quantidade']
             ]
         );
-        return redirect('produtos')->with('status', 'Sucesso');
+        //return redirect('produtos')->with('status', 'Sucesso');
+        return redirect('produtos')->withInput($req->only('nome'));
     }
 }

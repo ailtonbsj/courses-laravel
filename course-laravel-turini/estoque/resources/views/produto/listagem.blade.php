@@ -7,8 +7,8 @@
 @if (empty($produtos))
 <div class="alert alert-info">Você não tem nenhum produto cadastrado!</div>
 @else
-    @if (session('status'))
-        <div class="alert alert-info">{{ session('status') }}!</div>
+    @if (old('nome'))
+        <div class="alert alert-info">Produto {{ old('nome') }} cadastrado com sucesso!</div>
     @endif
 <table class="table table-striped table-hover">
     @foreach ($produtos as $p)
