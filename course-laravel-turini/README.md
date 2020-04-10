@@ -64,10 +64,13 @@ php artisan ui bootstrap
 npm install
 npm run dev
 
-#install bootstrap icons
+# install bootstrap icons
 npm i bootstrap-icons --save
 mkdir public/icons
 cp node_modules/bootstrap-icons/icons/search.svg public/icons/
 cp node_modules/bootstrap-icons/icons/trash.svg public/icons/
 cp node_modules/bootstrap-icons/icons/arrow-clockwise.svg public/icons/
+
+# making form request
+php artisan make:request ProdutosRequest
 ```

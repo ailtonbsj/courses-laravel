@@ -2,9 +2,11 @@
 
 namespace estoque\Http\Controllers;
 
-use estoque\Produto;
 use Illuminate\Http\Request;
+use estoque\Http\Requests\ProdutosRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use estoque\Produto;
 
 class ProdutoController extends Controller
 {
@@ -28,8 +30,20 @@ class ProdutoController extends Controller
         return view('produto.formulario');
     }
 
-    public function adiciona(Request $req)
+    public function adiciona(ProdutosRequest $req)
     {
+        // $validator = Validator::make(
+        //     $req->all(),
+        //     [
+        //         'nome' => 'required|min:5',
+        //         'descricao' => 'required|max:255',
+        //         'valor' => 'required|numeric',
+        //         'quantidade' => 'required|numeric'
+        //     ]
+        // );
+        // if($validator->fails())
+        //     return redirect()->action('ProdutoController@novo');
+
         // $produto = new Produto();
         // $produto->nome = $req->input('nome');
         // $produto->descricao = $req->input('descricao');
