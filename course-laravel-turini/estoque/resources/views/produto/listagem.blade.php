@@ -20,8 +20,13 @@
         <td>{{ $p->quantidade }}</td>
         <td>
             <a href="/produtos/mostra/{{ $p->id }}">
-                <img src="../icons/search.svg" title="Bootstrap">
-                <span class="glyphicon glyphicon-search"></span>
+                <img src="../icons/search.svg" title="show">
+            </a>
+            <a href="/produtos/remove/{{ $p->id }}">
+                <img src="../icons/trash.svg" title="remove">
+            </a>
+            <a href="/produtos/preenche/{{ $p->id }}">
+                <img src="../icons/arrow-clockwise.svg" title="refresh">
             </a>
         </td>
     </tr>

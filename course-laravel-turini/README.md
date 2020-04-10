@@ -68,4 +68,6 @@ npm run dev
 npm i bootstrap-icons --save
 mkdir public/icons
 cp node_modules/bootstrap-icons/icons/search.svg public/icons/
+cp node_modules/bootstrap-icons/icons/trash.svg public/icons/
+cp node_modules/bootstrap-icons/icons/arrow-clockwise.svg public/icons/
 ```
