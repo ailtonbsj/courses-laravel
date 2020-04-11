@@ -73,7 +73,7 @@ class ProdutoController extends Controller
                                         ->with('action','/produtos/atualiza');
     }
 
-    public function atualiza(Request $req)
+    public function atualiza(ProdutosRequest $req)
     {
         $produto = Produto::find($req->input('id'));
         $produto->nome = $req->input('nome');

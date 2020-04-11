@@ -73,4 +73,10 @@ cp node_modules/bootstrap-icons/icons/arrow-clockwise.svg public/icons/
 
 # making form request
 php artisan make:request ProdutosRequest
+
+# create login controller
+php artisan make:controller LoginController
+
+# create a middleware
+php artisan make:middleware AutorizacaoMiddleware
 ```

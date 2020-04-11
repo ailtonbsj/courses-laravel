@@ -13,15 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return '<h1>Hi</h1>';
+Route::get('/', function () {
+    return redirect('/produtos');
 });
+Route::get('/login', 'LoginController@login');
+Route::post('/login', 'LoginController@auth');
 
-Route::get('/produtos', 'ProdutoController@lista');
-Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id','[0-9]+');
-Route::get('/produtos/novo', 'ProdutoController@novo');
-Route::post('/produtos/adiciona', 'ProdutoController@adiciona');
-Route::get('/produtos/json', 'ProdutoController@listaJson');
-Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
-Route::get('/produtos/preenche/{id}', 'ProdutoController@preenche');
-Route::post('/produtos/atualiza', 'ProdutoController@atualiza');
+Route::get('/produtos', [
+    'middleware' => 'nosso-middleware',
+    'uses' => 'ProdutoController@lista'
+]);
+
+Route::middleware('nosso-middleware')->group(function () {
+    Route::get('/produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-9]+');
+    Route::get('/produtos/novo', 'ProdutoController@novo');
+    Route::post('/produtos/adiciona', 'ProdutoController@adiciona');
+    Route::get('/produtos/json', 'ProdutoController@listaJson');
+    Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
+    Route::get('/produtos/preenche/{id}', 'ProdutoController@preenche');
+    Route::post('/produtos/atualiza', 'ProdutoController@atualiza');
+});
