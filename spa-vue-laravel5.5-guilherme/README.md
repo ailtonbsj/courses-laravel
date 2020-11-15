@@ -1,5 +1,7 @@
 # History of commands
 
+> Social Folder
+
 ```bash
 # Install Vue CLI
 sudo npm i -g @vue/cli
@@ -11,6 +13,13 @@ vue create social
 npm i materialize-css@next
 npm i material-design-icons
 
+# Install axios
+npm i axios
+```
+
+> Webservice Folder
+
+```bash
 # Create webservice project
 composer create-project --prefer-dist laravel/laravel webservice
 
@@ -25,4 +34,11 @@ php artisan migrate
 
 # Install passport on project
 php artisan passport:install
+
+# Run werbservice
+php artisan serve
+
+# Laravel in pt-BR
+composer require laravel-lang/lang:~7.0
+cp -r vendor/laravel-lang/lang/src/pt_BR/ resources/lang/
 ```

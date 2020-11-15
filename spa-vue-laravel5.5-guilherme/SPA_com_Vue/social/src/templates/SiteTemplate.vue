@@ -2,8 +2,11 @@
   <div>
     <header>
       <nav-bar cor="green darken-1" logo="Social">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/login">Entrar</router-link></li>
+        <li>
+          <router-link to="/">{{ usuario.name }}</router-link>
+        </li>
+        <li><a @click="logout()">Sair</a></li>
+        <li><router-link to="/cadastro">Cadastre-se</router-link></li>
       </nav-bar>
     </header>
     <main>
@@ -37,7 +40,31 @@ import Footer from "../components/layout/Footer"
 import Card from "../components/layout/Card"
 
 export default {
-  components: { NavBar, Footer, Card }
+  components: { NavBar, Footer, Card },
+  data () {
+    return {
+      usuario: {
+        name: ''
+      }
+    }
+  },
+  methods: {
+    logout () {
+      sessionStorage.clear()
+      this.usuario = { name: '' }
+    }
+  },
+  created () {
+    if (sessionStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(sessionStorage.getItem('usuario'))
+    } else this.$router.push('/login')
+
+  },
+  watch: {
+    usuario (val) {
+      if (!val.name) this.$router.push('/login')
+    }
+  },
 }
 </script>
 

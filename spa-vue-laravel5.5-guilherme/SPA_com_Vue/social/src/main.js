@@ -10,7 +10,12 @@ Materialize.AutoInit()
 
 Vue.config.productionTip = false
 
-new Vue({
+let vue = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
+// Reactive sessionStorage
+window.onstorage = function(e) {
+  if(!('sessionStore.usuario' in e)) vue.$router.push('/login')
+}
