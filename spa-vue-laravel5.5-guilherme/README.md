@@ -41,4 +41,8 @@ php artisan serve
 # Laravel in pt-BR
 composer require laravel-lang/lang:~7.0
 cp -r vendor/laravel-lang/lang/src/pt_BR/ resources/lang/
+
+# Another migration
+php artisan make:migration add_image_table_users --table=users
+php artisan migrate
 ```

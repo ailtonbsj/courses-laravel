@@ -3,7 +3,7 @@
     <header>
       <nav-bar cor="green darken-1" logo="Social">
         <li>
-          <router-link to="/">{{ usuario.name }}</router-link>
+          <router-link to="/perfil">{{ usuario.name }}</router-link>
         </li>
         <li><a @click="logout()">Sair</a></li>
         <li><router-link to="/cadastro">Cadastre-se</router-link></li>
