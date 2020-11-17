@@ -13,9 +13,7 @@
       <div class="container valign-wrapper">
         <div class="row">
           <div class="col s4">
-            <Card>
-              <slot name="menuesquerdo" />
-            </Card>
+            <slot name="menuesquerdo" />
           </div>
           <div class="col s8">
             <slot name="principal" />
@@ -37,10 +35,9 @@
 <script>
 import NavBar from "../components/layout/NavBar"
 import Footer from "../components/layout/Footer"
-import Card from "../components/layout/Card"
 
 export default {
-  components: { NavBar, Footer, Card },
+  components: { NavBar, Footer },
   data () {
     return {
       usuario: {

@@ -45,4 +45,17 @@ cp -r vendor/laravel-lang/lang/src/pt_BR/ resources/lang/
 # Another migration
 php artisan make:migration add_image_table_users --table=users
 php artisan migrate
+
+# Creating Controllers
+php artisan make:controller UsuarioController
+
+# Install package CORS
+composer require fruitcake/laravel-cors
+php artisan vendor:publish --tag="cors"
+
+# Creating models
+php artisan make:model Conteudo -m
+php artisan make:model Comentario -m
+php artisan make:migration create_amigos_table --create=amigos
+php artisan make:migration create_curtidas_table --create=curtidas
 ```

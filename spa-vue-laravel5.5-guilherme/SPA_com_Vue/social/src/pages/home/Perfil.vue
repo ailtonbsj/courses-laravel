@@ -1,7 +1,7 @@
 <template>
   <site-template>
     <span slot="menuesquerdo">
-      <img src="@/assets/landing.svg" alt="Landing" class="responsive-img" />
+      <img :src="`http://localhost:8000/${usuario.image}`" alt="Landing" class="responsive-img" />
     </span>
     <span slot="principal">
       <h2>Perfil</h2>
@@ -11,7 +11,7 @@
       <div class="file-field input-field">
         <div class="btn">
           <span>Imagem</span>
-          <input type="file" />
+          <input type="file" @change="salvaImagem" />
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" />
@@ -40,7 +40,8 @@ export default {
       name: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+      image: ''
     }
   },
   created() {
@@ -57,11 +58,13 @@ export default {
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation,
+        image: this.image
       }, {"headers": {
         "authorization": `Bearer ${this.usuario.token}`
       }})
         .then(response => {
           if(response.data.token) {
+            this.usuario = response.data;
             sessionStorage.setItem('usuario', JSON.stringify(response.data));
             alert("Atualizado!");
           } else {
@@ -75,6 +78,17 @@ export default {
         .catch(e => {
           alert(e);
         })
+    },
+    salvaImagem(e) {
+      let arquivo = e.target.files || e.dataTransfer.files;
+      if(!arquivo.length) {
+        return;
+      }
+      let reader = new FileReader();
+      reader.onloadend = (ev) => {
+        this.image = ev.target.result;
+      }
+      reader.readAsDataURL(arquivo[0]);
     }
   }
 }

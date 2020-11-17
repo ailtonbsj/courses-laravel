@@ -1,5 +1,24 @@
 <template>
   <site-template>
+    <span slot="menuesquerdo">
+      <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper">
+          <div class="col s4">
+            <img
+              :src="`http://localhost:8000/${usuario.image}`"
+              alt="perfil"
+              class="circle responsive-img"
+            />
+            <!-- notice the "circle" class -->
+          </div>
+          <div class="col s8">
+            <span class="black-text">
+              <h5>{{ usuario.name }}</h5>
+            </span>
+          </div>
+        </div>
+      </div>
+    </span>
     <span slot="principal">
       <publicar-conteudo />
       <card-conteudo
@@ -24,7 +43,17 @@ import CardDetalhe from '../../components/social/CardDetalhe'
 import PublicarConteudo from '../../components/social/PublicarConteudo'
 
 export default {
-  components: { SiteTemplate, CardConteudo, CardDetalhe, PublicarConteudo }
+  components: { SiteTemplate, CardConteudo, CardDetalhe, PublicarConteudo },
+  data() {
+    return {
+      usuario: { image: '' }
+    }
+  },
+  created () {
+    if (sessionStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(sessionStorage.getItem('usuario'))
+    }
+  }
 }
 </script>
 
