@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import SiteTemplate from '../../templates/SiteTemplate'
 export default {
   components: { SiteTemplate },
@@ -53,7 +52,7 @@ export default {
   },
   methods: {
     perfil () {
-      axios.put(`http://127.0.0.1:8000/api/perfil`, {
+      this.$http.put(`/perfil`, {
         name: this.name,
         email: this.email,
         password: this.password,
