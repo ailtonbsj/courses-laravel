@@ -6,6 +6,15 @@
 
 This is the source code of all projects I did in several courses of Laravel. This courses are videos in Udemy, books, youtube and tutoriais online.
 
+## Laravel 8 - Primeiros Passos
+![](https://img.shields.io/badge/status-in%20progress-blue)
+
+> Folder: course-laravel8-primeiros-passos
+
+An online course of Laravel from [Udemy](https://www.udemy.com/course/laravel-8/).
+
+Creator: Nanderson Castro
+
 ## SPA com Vue JS e API com Laravel
 ![](https://img.shields.io/badge/status-in%20progress-blue)
 
