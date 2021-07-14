@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return view('welcome');
+});
+
+Route::get('/queries/{event}', function($event){
+    //$events  = \App\Models\Event::all();
+    //$event = \App\Models\Event::where('id', 1)->first();
+    return \App\Models\Event::find($event);
+});
+
 Route::get('/hello-world', [HelloWorldController::class, 'helloWorld']);
 Route::get('/hello/{name?}', [HelloWorldController::class, 'hello']);
